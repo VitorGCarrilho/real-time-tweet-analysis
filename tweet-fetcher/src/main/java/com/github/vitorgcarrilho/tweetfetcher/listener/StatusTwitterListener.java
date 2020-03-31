@@ -26,7 +26,7 @@ public class StatusTwitterListener implements StatusListener {
 
     @Override
     public void onStatus(Status status) {
-        logger.info("posting new status");
+        logger.debug("posting new status");
         tweetProducer.sendMessage("@" + status.getUser().getScreenName() + " - Location:"+status.getUser().getLocation()+ " - " + status.getText());
     }
 
